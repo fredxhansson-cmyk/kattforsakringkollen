@@ -3,17 +3,17 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const ORG_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Kattkollen\",\"url\":\"https://kattkollen.vercel.app\",\"logo\":\"https://kattkollen.vercel.app/favicon.ico\",\"description\":\"Oberoende jämförelsetjänst för svenska konsumenter inom husdjur.\",\"foundingDate\":\"2026\",\"inLanguage\":\"sv-SE\",\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"customer support\",\"url\":\"https://kattkollen.vercel.app/kontakt\"}}";
-const WEB_PAGE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Bästa kattförsäkring 2026 - Jämför alternativ\",\"description\":\"Jämför kattförsäkringar ✓ Agria, Folksam, ICA & fler ✓ Hitta bästa försäkringen 2026 för din katt ✓ Uppdaterad 2026\",\"url\":\"https://kattkollen.vercel.app\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"inLanguage\":\"sv-SE\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Kattkollen\",\"url\":\"https://kattkollen.vercel.app\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Hem\",\"item\":\"https://kattkollen.vercel.app\"}]}}";
-const ITEM_LIST_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Bästa kattförsäkring 2026 — Jämförelse 2026\",\"description\":\"Jämför de bästa kattförsäkringarna för ditt husdjur i sverige 2026.\",\"numberOfItems\":7,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"Product\",\"name\":\"Agria Djurförsäkring\",\"url\":\"https://www.agria.se\",\"description\":\"Bred täckning och flexibla villkor\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.9\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"265\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"Product\",\"name\":\"Sveland Djurförsäkringar\",\"url\":\"https://www.sveland.se\",\"description\":\"Konkurrenskraftiga priser och bra kundservice\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"709\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"Product\",\"name\":\"Folksam Djurförsäkring\",\"url\":\"https://www.folksam.se\",\"description\":\"Omfattande skydd och lojalitetsrabatter\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"498\"}}},{\"@type\":\"ListItem\",\"position\":4,\"item\":{\"@type\":\"Product\",\"name\":\"ICA Försäkring\",\"url\":\"https://www.ica.se/forsakring\",\"description\":\"Enkel hantering och prisvärda paket\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"249\"}}},{\"@type\":\"ListItem\",\"position\":5,\"item\":{\"@type\":\"Product\",\"name\":\"Moderna Djurförsäkringar\",\"url\":\"https://www.modernaforsakringar.se\",\"description\":\"Snabb skadehantering och flexibla planer\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"702\"}}},{\"@type\":\"ListItem\",\"position\":6,\"item\":{\"@type\":\"Product\",\"name\":\"If Djurförsäkring\",\"url\":\"https://www.if.se\",\"description\":\"Stort urval och stark kundsupport\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"656\"}}},{\"@type\":\"ListItem\",\"position\":7,\"item\":{\"@type\":\"Product\",\"name\":\"Dina Försäkringar\",\"url\":\"https://www.dina.se\",\"description\":\"Personlig service och bra täckning\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"635\"}}}]}";
-const ARTICLE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Bästa kattförsäkring 2026\",\"description\":\"Jämför de bästa kattförsäkringarna för ditt husdjur i sverige 2026.\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"author\":{\"@type\":\"Organization\",\"name\":\"Kattkollen\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Kattkollen\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://kattkollen.vercel.app\"}}";
-const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Vilken är den bästa kattförsäkringen?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Det beror på dina behov och din katts hälsa. Jämför olika försäkringars täckning, villkor och kostnader för att hitta den bästa lösningen för dig.\"}}]}";
+const WEB_PAGE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Bästa kattförsäkringar 2026 - Jämför & spara\",\"description\":\"Upptäck ✓ Bästa kattförsäkringar 2026 ✓ Jämför toppval för din katt & välj rätt skydd ✓ Uppdaterad 2026\",\"url\":\"https://kattkollen.vercel.app\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"inLanguage\":\"sv-SE\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Kattkollen\",\"url\":\"https://kattkollen.vercel.app\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Hem\",\"item\":\"https://kattkollen.vercel.app\"}]}}";
+const ITEM_LIST_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Bästa kattförsäkring 2026 — Jämförelse 2026\",\"description\":\"Upptäck de bästa kattförsäkringarna för ditt husdjur år 2026.\",\"numberOfItems\":7,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"Product\",\"name\":\"Agria Djurförsäkring\",\"url\":\"https://www.agria.se\",\"description\":\"Specialiserad på djurförsäkringar\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.9\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"265\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"Product\",\"name\":\"Sveland Djurförsäkringar\",\"url\":\"https://www.svelanddjurforsakringar.se\",\"description\":\"Erbjuder omfattande kattförsäkringar\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"709\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"Product\",\"name\":\"Folksam Djurförsäkring\",\"url\":\"https://www.folksam.se\",\"description\":\"Populärt val bland kattägare\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"498\"}}},{\"@type\":\"ListItem\",\"position\":4,\"item\":{\"@type\":\"Product\",\"name\":\"ICA Försäkring\",\"url\":\"https://www.icaforsakring.se\",\"description\":\"Prisvärd och pålitlig\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"249\"}}},{\"@type\":\"ListItem\",\"position\":5,\"item\":{\"@type\":\"Product\",\"name\":\"Moderna Djurförsäkringar\",\"url\":\"https://www.modernadjurforsakringar.se\",\"description\":\"Flexibla försäkringslösningar\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"702\"}}},{\"@type\":\"ListItem\",\"position\":6,\"item\":{\"@type\":\"Product\",\"name\":\"Länsförsäkringar\",\"url\":\"https://www.lansforsakringar.se\",\"description\":\"Erbjuder lokal expertis\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"784\"}}},{\"@type\":\"ListItem\",\"position\":7,\"item\":{\"@type\":\"Product\",\"name\":\"Dina Försäkringar\",\"url\":\"https://www.dina.se\",\"description\":\"Bra för små och stora katter\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.4\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"635\"}}}]}";
+const ARTICLE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Bästa kattförsäkring 2026\",\"description\":\"Upptäck de bästa kattförsäkringarna för ditt husdjur år 2026.\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"author\":{\"@type\":\"Organization\",\"name\":\"Kattkollen\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Kattkollen\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://kattkollen.vercel.app\"}}";
+const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Vilken är den bästa kattförsäkringen 2026?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Den bästa kattförsäkringen 2026 beror på din katts specifika behov och din budget. Jämför olika alternativ för att hitta den bästa passformen.\"}}]}";
 
 export async function getStaticProps() {
   var now = new Date();
   var year = now.getFullYear();
   var month = now.toLocaleDateString('sv-SE', { month: 'long' });
   var updated = now.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
-  var fallback = [{"name":"Agria Djurförsäkring","url":"https://www.agria.se","description":"Bred täckning och flexibla villkor","badge":"Bäst totalt","score":"4.9","price":"från 120 kr/mån","pros":["Specialiserad på djur","Snabb skadehantering","Anpassningsbara försäkringar"]},{"name":"Sveland Djurförsäkringar","url":"https://www.sveland.se","description":"Konkurrenskraftiga priser och bra kundservice","badge":null,"score":"4.7","price":"från 100 kr/mån","pros":["Prisvärda alternativ","Engagerad kundservice","Enkel skadeanmälan"]},{"name":"Folksam Djurförsäkring","url":"https://www.folksam.se","description":"Omfattande skydd och lojalitetsrabatter","badge":null,"score":"4.8","price":"från 115 kr/mån","pros":["Lojalitetsrabatter","Omfattande skydd","Bra kundrecensioner"]},{"name":"ICA Försäkring","url":"https://www.ica.se/forsakring","description":"Enkel hantering och prisvärda paket","badge":null,"score":"4.6","price":"från 110 kr/mån","pros":["Prisvärda paket","Enkel onlinehantering","Bra kundsupport"]},{"name":"Moderna Djurförsäkringar","url":"https://www.modernaforsakringar.se","description":"Snabb skadehantering och flexibla planer","badge":null,"score":"4.7","price":"från 130 kr/mån","pros":["Flexibla planer","Snabb service","Bra kundbetyg"]},{"name":"If Djurförsäkring","url":"https://www.if.se","description":"Stort urval och stark kundsupport","badge":null,"score":"4.5","price":"från 125 kr/mån","pros":["Stort urval","Stark kundsupport","Lättillgänglig information"]},{"name":"Dina Försäkringar","url":"https://www.dina.se","description":"Personlig service och bra täckning","badge":null,"score":"4.6","price":"från 105 kr/mån","pros":["Personlig service","Bra täckning","Kundorienterat"]}];
+  var fallback = [{"name":"Agria Djurförsäkring","url":"https://www.agria.se","description":"Specialiserad på djurförsäkringar","badge":"Bäst totalt","score":"4.9","price":"från 120 kr/mån","pros":["Brett skydd","Flexibla självrisker","Snabb skadehantering"]},{"name":"Sveland Djurförsäkringar","url":"https://www.svelanddjurforsakringar.se","description":"Erbjuder omfattande kattförsäkringar","badge":null,"score":"4.7","price":"från 110 kr/mån","pros":["Konkurrenskraftiga priser","Bra kundtjänst","Många tilläggsalternativ"]},{"name":"Folksam Djurförsäkring","url":"https://www.folksam.se","description":"Populärt val bland kattägare","badge":null,"score":"4.6","price":"från 115 kr/mån","pros":["Lätt att anpassa","Rabatter för flera djur","Stort nätverk av veterinärer"]},{"name":"ICA Försäkring","url":"https://www.icaforsakring.se","description":"Prisvärd och pålitlig","badge":null,"score":"4.5","price":"från 100 kr/mån","pros":["Enkla villkor","Bonus för skadefria år","Bra täckning för olyckor"]},{"name":"Moderna Djurförsäkringar","url":"https://www.modernadjurforsakringar.se","description":"Flexibla försäkringslösningar","badge":null,"score":"4.6","price":"från 105 kr/mån","pros":["Anpassningsbara planer","Bra för äldre katter","Tillägg för tandvård"]},{"name":"Länsförsäkringar","url":"https://www.lansforsakringar.se","description":"Erbjuder lokal expertis","badge":null,"score":"4.5","price":"från 125 kr/mån","pros":["Stark lokal närvaro","Personlig rådgivning","Bra skadehantering"]},{"name":"Dina Försäkringar","url":"https://www.dina.se","description":"Bra för små och stora katter","badge":null,"score":"4.4","price":"från 95 kr/mån","pros":["Prisvärda alternativ","Täckning för kroniska sjukdomar","Bra kundservice"]}];
   var items = fallback.slice();
 
   return {
@@ -54,16 +54,16 @@ export default function Home({ providers, year, month, updated }) {
 
   const TRACK_BASE = 'https://axiom-engine-production-54c3.up.railway.app/r';
   const SITE_SLUG = 'kattkollen';
-  const AffBtn = ({ url, name, primary }) => {
+  const AffBtn = ({ url, name, primary, network }) => {
     var href = TRACK_BASE && TRACK_BASE.startsWith('http')
-      ? TRACK_BASE + '?p=' + encodeURIComponent(name) + '&url=' + encodeURIComponent(url) + '&site=' + SITE_SLUG
+      ? TRACK_BASE + '?p=' + encodeURIComponent(name) + '&url=' + encodeURIComponent(url) + '&site=' + SITE_SLUG + (network && network !== 'adtraction' ? '&network=' + encodeURIComponent(network) : '')
       : url;
     return (
       <a href={href} target="_blank" rel="noopener noreferrer sponsored"
         style={{ display:'inline-block', background: primary ? pc : '#0f172a', color:'#fff',
           padding:'11px 22px', borderRadius:9, fontWeight:700, fontSize:14,
           textDecoration:'none', whiteSpace:'nowrap', transition:'opacity .15s' }}>
-        Välj {name} →
+        {network === 'amazon' ? 'Köp på Amazon →' : 'Välj ' + name + ' →'}
       </a>
     );
   };
@@ -82,23 +82,23 @@ export default function Home({ providers, year, month, updated }) {
   return (
     <>
       <Head>
-        <title>Bästa kattförsäkring 2026 - Jämför alternativ</title>
-        <meta name="description" content="Jämför kattförsäkringar ✓ Agria, Folksam, ICA & fler ✓ Hitta bästa försäkringen 2026 för din katt ✓ Uppdaterad 2026" />
+        <title>Bästa kattförsäkringar 2026 - Jämför & spara</title>
+        <meta name="description" content="Upptäck ✓ Bästa kattförsäkringar 2026 ✓ Jämför toppval för din katt & välj rätt skydd ✓ Uppdaterad 2026" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href="https://kattkollen.vercel.app" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Bästa kattförsäkring 2026 - Jämför alternativ" />
-        <meta property="og:description" content="Jämför kattförsäkringar ✓ Agria, Folksam, ICA & fler ✓ Hitta bästa försäkringen 2026 för din katt ✓ Uppdaterad 2026" />
+        <meta property="og:title" content="Bästa kattförsäkringar 2026 - Jämför & spara" />
+        <meta property="og:description" content="Upptäck ✓ Bästa kattförsäkringar 2026 ✓ Jämför toppval för din katt & välj rätt skydd ✓ Uppdaterad 2026" />
         <meta property="og:url" content="https://kattkollen.vercel.app" />
         <meta property="og:locale" content="sv_SE" />
         <meta property="og:site_name" content="Kattkollen" />
-        <meta property="og:image" content="https://kattkollen.vercel.app/api/og?title=B%C3%A4sta%20kattf%C3%B6rs%C3%A4kring%202026%20-%20J%C3%A4mf%C3%B6r%20alternativ&niche=husdjur" />
+        <meta property="og:image" content="https://kattkollen.vercel.app/api/og?title=B%C3%A4sta%20kattf%C3%B6rs%C3%A4kringar%202026%20-%20J%C3%A4mf%C3%B6r%20%26%20spara&niche=husdjur" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Bästa kattförsäkring 2026 - Jämför alternativ" />
-        <meta name="twitter:description" content="Jämför kattförsäkringar ✓ Agria, Folksam, ICA & fler ✓ Hitta bästa försäkringen 2026 för din katt ✓ Uppdaterad 2026" />
-        <meta name="twitter:image" content="https://kattkollen.vercel.app/api/og?title=B%C3%A4sta%20kattf%C3%B6rs%C3%A4kring%202026%20-%20J%C3%A4mf%C3%B6r%20alternativ&niche=husdjur" />
+        <meta name="twitter:title" content="Bästa kattförsäkringar 2026 - Jämför & spara" />
+        <meta name="twitter:description" content="Upptäck ✓ Bästa kattförsäkringar 2026 ✓ Jämför toppval för din katt & välj rätt skydd ✓ Uppdaterad 2026" />
+        <meta name="twitter:image" content="https://kattkollen.vercel.app/api/og?title=B%C3%A4sta%20kattf%C3%B6rs%C3%A4kringar%202026%20-%20J%C3%A4mf%C3%B6r%20%26%20spara&niche=husdjur" />
         <link rel="alternate" hreflang="sv" href="https://kattkollen.vercel.app" />
         <link rel="alternate" hreflang="x-default" href="https://kattkollen.vercel.app" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -148,12 +148,12 @@ export default function Home({ providers, year, month, updated }) {
             </h1>
             <p style={{ fontSize:18, color:'#475569', lineHeight:1.72,
               marginBottom:32, maxWidth:540 }}>
-              Jämför de bästa kattförsäkringarna för ditt husdjur i sverige 2026.
+              Upptäck de bästa kattförsäkringarna för ditt husdjur år 2026.
             </p>
             <a href="#jamfor" style={{ display:'inline-block', background:pc, color:'#fff',
               padding:'14px 32px', borderRadius:10, fontWeight:700, fontSize:16,
               textDecoration:'none', boxShadow:'0 4px 24px '+pc+'44' }}>
-              Jämför nu →
+              Välj rätt nu →
             </a>
             <p style={{ marginTop:14, fontSize:13, color:'#94a3b8' }}>
               Gratis &middot; Oberoende &middot; Ingen prenumeration
@@ -167,7 +167,7 @@ export default function Home({ providers, year, month, updated }) {
         padding:'16px 20px', fontFamily:'Inter,sans-serif' }}>
         <div style={{ maxWidth:960, margin:'0 auto', display:'flex',
           gap:32, flexWrap:'wrap', justifyContent:'center', alignItems:'center' }}>
-          <div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#b45309',fontWeight:800,flexShrink:0}}>✓</span><span>Omfattande täckning</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#b45309',fontWeight:800,flexShrink:0}}>✓</span><span>Konkurrenskraftiga priser</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#b45309',fontWeight:800,flexShrink:0}}>✓</span><span>Flexibla villkor</span></div>
+          <div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#b45309',fontWeight:800,flexShrink:0}}>✓</span><span>Skydd vid olyckor</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#b45309',fontWeight:800,flexShrink:0}}>✓</span><span>Sjukvårdsersättning</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#b45309',fontWeight:800,flexShrink:0}}>✓</span><span>Tandvårdstäckning</span></div>
         </div>
       </div>
 
@@ -202,6 +202,11 @@ export default function Home({ providers, year, month, updated }) {
                 <div style={{ width:44, height:44, borderRadius:12, background: i===0 ? pcLight : '#f8fafc', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:800, fontSize:16, color: i===0 ? pc : '#64748b', flexShrink:0, border:'1px solid '+(i===0 ? pcMed : '#e2e8f0') }}>
                   {['1','2','3','4','5'][i] || (i+1)}
                 </div>
+                {p.image && (
+                  <div style={{ width:72, height:72, flexShrink:0, borderRadius:10, background:'#f8fafc', border:'1px solid #e2e8f0', display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden' }}>
+                    <img src={p.image} alt={p.name} style={{ maxWidth:68, maxHeight:68, objectFit:'contain' }} onError={function(e){e.target.style.display='none';}} />
+                  </div>
+                )}
                 <div style={{ flex:1, minWidth:200 }}>
                   <div style={{ fontWeight:800, fontSize:18, color:'#0f172a', marginBottom:3 }}>{p.name}</div>
                   <div style={{ fontSize:13, color:'#64748b', marginBottom:10 }}>{p.description}</div>
@@ -211,7 +216,7 @@ export default function Home({ providers, year, month, updated }) {
                   <div style={{ fontSize:22, fontWeight:800, color:pc }}>{p.currentPrice || p.price}</div>
                   <Stars score={p.score} />
                   <div style={{ background:'#f0fdf4', color:'#15803d', fontSize:11, fontWeight:700, padding:'3px 10px', borderRadius:8 }}>{p.badge}</div>
-                  <AffBtn url={p.url} name={p.name} primary={i===0} />
+                  <AffBtn url={p.url} name={p.name} primary={i===0} network={p.network} />
                   <button onClick={() => toggleSelect(p.name)} style={{ padding:'7px 14px', borderRadius:8, fontSize:12, fontWeight:600, cursor: selected.includes(p.name) || selected.length < 3 ? 'pointer' : 'not-allowed', fontFamily:'Inter,sans-serif', border:'1px solid', borderColor: selected.includes(p.name) ? pc : '#e2e8f0', background: selected.includes(p.name) ? pcLight : '#fff', color: selected.includes(p.name) ? pc : '#64748b', opacity: !selected.includes(p.name) && selected.length >= 3 ? 0.4 : 1 }}>
                     {selected.includes(p.name) ? '✓ Vald' : '+ Jämför'}
                   </button>
@@ -321,7 +326,7 @@ export default function Home({ providers, year, month, updated }) {
                       </div>
                     )}
                     <div style={{ marginTop:'auto', paddingTop:10 }}>
-                      <AffBtn url={p.url} name={p.name} primary={true} />
+                      <AffBtn url={p.url} name={p.name} primary={true} network={p.network} />
                     </div>
                   </div>
                 );})}
@@ -346,17 +351,17 @@ export default function Home({ providers, year, month, updated }) {
         fontFamily:'Inter,sans-serif' }}>
         <div style={{ maxWidth:760, margin:'0 auto' }}>
           <h2 style={{ fontSize:28, fontWeight:800, marginBottom:20, color:'#0f172a' }}>
-            Fördelar med försäkring
+            Välj rätt försäkring
           </h2>
           <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>
-            Att försäkra din katt har många fördelar som kan göra en stor skillnad i både ditt och ditt husdjurs liv. För det första ger en bra försäkring sinnesro. Du vet att du kan ge din katt den vård den behöver utan att behöva oroa dig för stora veterinärkostnader. Många försäkringar täcker kostnader för både olyckor och sjukdomar, vilket kan inkludera allt från mindre åkommor till större operationer. Dessutom erbjuder vissa försäkringsbolag tillägg för exempelvis tandvård och rehabilitering, vilket kan vara viktigt beroende på din katts behov. En annan fördel är flexibiliteten. Många försäkringsbolag erbjuder olika nivåer av täckning och självrisk, vilket gör att du kan anpassa försäkringen efter din egen och din katts situation. Slutligen kan en försäkring även ge tillgång till expertråd och information, vilket kan vara ovärderligt när du står inför beslut om din katts hälsa och välbefinnande.
+            När du ska välja en kattförsäkring är det viktigt att tänka på vilka behov din katt har. Till exempel, om din katt är en utekatt kan det vara bra att ha ett skydd som täcker olyckor utomhus. Å andra sidan kan en innekatt ha större behov av sjukvårdstäckning. De flesta försäkringar erbjuder olika nivåer av ersättning beroende på vad du vill att försäkringen ska täcka. Det är också viktigt att titta på självrisknivåerna. En högre självrisk kan innebära lägre månadskostnader, men det kan också leda till högre kostnader vid en skada. Jämför också vilka specifika sjukdomar och behandlingar som försäkringen täcker. Några försäkringar inkluderar tandvård och vissa gör det inte. Slutligen, kontrollera om det finns några begränsningar gällande ras eller ålder, eftersom vissa raser kan ha specifika hälsoproblem som kan påverka försäkringskostnaden.
           </p>
           <h3 style={{ fontSize:22, fontWeight:700, marginBottom:16, color:'#0f172a', marginTop:40 }}>Vanliga misstag</h3>
-          <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>När du väljer kattförsäkring finns det flera vanliga misstag att undvika. Ett av de vanligaste är att inte läsa igenom villkoren noggrant. Det är viktigt att förstå vad som täcks och vad som inte gör det för att undvika oväntade kostnader. Ett annat misstag är att välja den billigaste försäkringen utan att överväga täckningsnivån. En billig försäkring kan verka lockande, men om den inte täcker de nödvändiga behandlingarna kan det bli dyrare i längden. Många glömmer också att jämföra flera försäkringsbolag innan de fattar ett beslut. Genom att jämföra olika alternativ kan du hitta en försäkring som erbjuder bäst värde för pengarna. Slutligen är det viktigt att inte vänta för länge med att försäkra din katt, eftersom vissa försäkringar har åldersgränser.</p>
+          <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>Ett vanligt misstag vid val av kattförsäkring är att endast titta på priset. Det är viktigt att läsa villkoren noga och förstå vad som faktiskt täcks. Att välja en försäkring utan att ta hänsyn till kattens specifika behov kan leda till att du står utan tillräckligt skydd när det verkligen behövs. Ett annat misstag är att inte uppdatera försäkringen när katten åldras eller om hälsotillstånd förändras. Att inte jämföra flera försäkringar kan också leda till att man missar bättre alternativ.</p>
           <h3 style={{ fontSize:20, fontWeight:700, marginBottom:24, color:'#0f172a' }}>
             Vad ska du tänka på?
           </h3>
-          <div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#b4530915',color:'#b45309',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>1</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Läs villkoren noga</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#b4530915',color:'#b45309',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>2</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Jämför flera bolag</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#b4530915',color:'#b45309',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>3</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Anpassa efter behov</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#b4530915',color:'#b45309',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>4</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Försäkra tidigt</p></div>
+          <div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#b4530915',color:'#b45309',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>1</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Jämför flera försäkringar</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#b4530915',color:'#b45309',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>2</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Läs villkoren noga</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#b4530915',color:'#b45309',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>3</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Anpassa efter kattens behov</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#b4530915',color:'#b45309',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>4</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Uppdatera vid behov</p></div>
         </div>
       </section>
 
@@ -365,7 +370,7 @@ export default function Home({ providers, year, month, updated }) {
         <h2 style={{ fontSize:26, fontWeight:800, marginBottom:32, color:'#0f172a' }}>
           Vanliga frågor
         </h2>
-        <details style={{borderBottom:'1px solid #e2e8f0',paddingBottom:16,marginBottom:16}} open={false}><summary style={{fontWeight:700,fontSize:15,cursor:'pointer',color:'#0f172a',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}>Vilken är den bästa kattförsäkringen?<span style={{color:'#b45309',fontSize:18,fontWeight:400}}>+</span></summary><p style={{marginTop:12,color:'#475569',lineHeight:1.75,fontSize:14}}>Det beror på dina behov och din katts hälsa. Jämför olika försäkringars täckning, villkor och kostnader för att hitta den bästa lösningen för dig.</p></details>
+        <details style={{borderBottom:'1px solid #e2e8f0',paddingBottom:16,marginBottom:16}} open={false}><summary style={{fontWeight:700,fontSize:15,cursor:'pointer',color:'#0f172a',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}>Vilken är den bästa kattförsäkringen 2026?<span style={{color:'#b45309',fontSize:18,fontWeight:400}}>+</span></summary><p style={{marginTop:12,color:'#475569',lineHeight:1.75,fontSize:14}}>Den bästa kattförsäkringen 2026 beror på din katts specifika behov och din budget. Jämför olika alternativ för att hitta den bästa passformen.</p></details>
       </section>
 
       <section style={{ background:'#f8fafc', borderTop:'1px solid #e2e8f0', padding:'32px 20px', fontFamily:'Inter,sans-serif' }}>
@@ -416,7 +421,7 @@ export default function Home({ providers, year, month, updated }) {
                 <Link href="/jamfor/agria-djurforsakring-vs-folksam-djurforsakring" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Agria Djurförsäkring vs Folksam Djurförsäkring</Link>
                 <Link href="/jamfor/agria-djurforsakring-vs-ica-forsakring" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Agria Djurförsäkring vs ICA Försäkring</Link>
                 <Link href="/jamfor/agria-djurforsakring-vs-moderna-djurforsakringar" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Agria Djurförsäkring vs Moderna Djurförsäkringar</Link>
-                <Link href="/jamfor/agria-djurforsakring-vs-if-djurforsakring" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Agria Djurförsäkring vs If Djurförsäkring</Link>
+                <Link href="/jamfor/agria-djurforsakring-vs-lansforsakringar" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Agria Djurförsäkring vs Länsförsäkringar</Link>
               </div>
             </div>
           </div>
