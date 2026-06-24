@@ -1,0 +1,12 @@
+export async function getServerSideProps({ res }) {
+  const base = process.env.NEXT_PUBLIC_URL || 'https://kattkollen.vercel.app';
+  const pages = [{"path":"","priority":"1.0","changefreq":"daily"},{"path":"/om-oss","priority":"0.5","changefreq":"monthly"},{"path":"/kontakt","priority":"0.4","changefreq":"monthly"},{"path":"/integritetspolicy","priority":"0.3","changefreq":"yearly"},{"path":"/hund","priority":"0.8","changefreq":"weekly"},{"path":"/katt","priority":"0.8","changefreq":"weekly"},{"path":"/kanin","priority":"0.8","changefreq":"weekly"},{"path":"/stor-hund","priority":"0.8","changefreq":"weekly"},{"path":"/liten-hund","priority":"0.8","changefreq":"weekly"},{"path":"/jamfor/agria-vs-lassie","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/agria-vs-sveland","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/agria-vs-if-djur","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/agria-vs-folksam-djur","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/agria-vs-musti-group","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/lassie-vs-sveland","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/lassie-vs-if-djur","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/lassie-vs-folksam-djur","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/lassie-vs-musti-group","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/sveland-vs-if-djur","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/sveland-vs-folksam-djur","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/sveland-vs-musti-group","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/if-djur-vs-folksam-djur","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/if-djur-vs-musti-group","priority":"0.7","changefreq":"weekly"},{"path":"/jamfor/folksam-djur-vs-musti-group","priority":"0.7","changefreq":"weekly"}];
+  const xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
+    pages.map(function(p) { return '<url><loc>'+base+p.path+'</loc><lastmod>2026-06-24</lastmod><changefreq>'+p.changefreq+'</changefreq><priority>'+p.priority+'</priority></url>'; }).join('') +
+    '</urlset>';
+  res.setHeader('Content-Type', 'application/xml');
+  res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate');
+  res.write(xml); res.end();
+  return { props: {} };
+}
+export default function Sitemap() { return null; }
