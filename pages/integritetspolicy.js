@@ -6,6 +6,7 @@ export default function Integritetspolicy() {
     <>
       <Head>
         <title>Integritetspolicy — Kattkollen</title>
+        <meta name="robots" content="noindex, follow" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
       </Head>
       <nav style={{ background:'#fff', borderBottom:'1px solid #e2e8f0', padding:'0 20px', height:60, display:'flex', alignItems:'center', fontFamily:'Inter,sans-serif' }}>
